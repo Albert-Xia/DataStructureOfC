@@ -58,3 +58,32 @@ int ListDelete(LNode *L, int i, Elemtype *e){
     free(p);
     return OK;
 }
+
+void CreateListTail(LNode *L, int n){
+    LinkList p,r;
+    L = (LinkList)malloc(sizeof(LNode));
+    r = L;
+    for (int i = 1; i <= n; i++) {
+        p = (LinkList)malloc(sizeof(LNode));
+        Elemtype e;
+        printf("输入要插入的数据：\n");
+        while (scanf("%d",&e)) {
+            p->data = e;
+        }
+        r->next = p;
+        r = p;
+    }
+    r->next = NULL;
+}
+
+int ClearList(LNode *L){
+    LinkList p,q;
+    p = L->next;
+    while (p) {
+        q=p;
+        p = p->next;
+        free(q);
+    }
+    L->next = NULL;
+    return OK;
+}

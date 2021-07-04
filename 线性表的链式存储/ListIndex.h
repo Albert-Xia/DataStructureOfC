@@ -25,7 +25,9 @@ int ListInsert(LNode *L, int i, Elemtype e);
 
 int ListDelete(LNode *L, int i, Elemtype *e);
 
+void CreateListTail(LNode *L, int n);
 
+int ClearList(LNode *L);
 
 
 
